@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 65,
       position: "ATT",
       stats: { PAC: 90, SHO: 70, PAS: 75, DRI: 85, DEF: 65, PHY: 68 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 3, assists: 0, rating: 8.5 },
+        { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6.5 },
+      ],
     },
     {
       name: "PEPE",
@@ -43,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 63,
       position: "CMD",
       stats: { PAC: 90, SHO: 85, PAS: 88, DRI: 91, DEF: 70, PHY: 80 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 4, assists: 0, rating: 9 },
+        { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 8 },
+      ],
     },
     {
       name: "CURTI",
@@ -51,7 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 64,
       position: "LW",
       stats: { PAC: 78, SHO: 80, PAS: 75, DRI: 82, DEF: 85, PHY: 88 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 3, assists: 5, rating: 9.5 },
+        { opponent: "Rocca Boys", goals: 1, assists: 2, rating: 9 },
+      ],
     },
     {
       name: "COLOMBANO",
@@ -59,7 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 61,
       position: "CM",
       stats: { PAC: 82, SHO: 80, PAS: 78, DRI: 85, DEF: 90, PHY: 80 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 2, assists: 1, rating: 8 },
+        { opponent: "Rocca Boys", goals: 3, assists: 1, rating: 9 },
+      ],
     },
     {
       name: "HILA",
@@ -67,7 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 59,
       position: "ATT",
       stats: { PAC: 80, SHO: 85, PAS: 90, DRI: 88, DEF: 75, PHY: 82 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 1, rating: 6.5 },
+        { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6.5 },
+      ],
     },
     {
       name: "COGNO",
@@ -75,7 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 56,
       position: "ATT",
       stats: { PAC: 45, SHO: 75, PAS: 43, DRI: 58, DEF: 55, PHY: 72 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 0, rating: 6.5 },
+        { opponent: "Rocca Boys", goals: 1, assists: 0, rating: 7 },
+      ],
     },
     {
       name: "VECCHIO",
@@ -83,7 +101,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 60,
       position: "ATT",
       stats: { PAC: 88, SHO: 80, PAS: 82, DRI: 85, DEF: 78, PHY: 90 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 0, rating: 4.5 },
+        { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 9.5 },
+      ],
     },
     {
       name: "VACCHETTA",
@@ -91,7 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 63,
       position: "DC",
       stats: { PAC: 85, SHO: 78, PAS: 80, DRI: 82, DEF: 75, PHY: 83 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 0, rating: 7.5 },
+        { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 7 },
+      ],
     },
     {
       name: "OLOCCO",
@@ -99,7 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 57,
       position: "DC",
       stats: { PAC: 90, SHO: 85, PAS: 88, DRI: 91, DEF: 70, PHY: 80 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 0, rating: 6.5 },
+        { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 7 },
+      ],
     },
     {
       name: "MEGERA",
@@ -107,7 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 56,
       position: "DC",
       stats: { PAC: 78, SHO: 80, PAS: 75, DRI: 82, DEF: 85, PHY: 88 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 0, rating: 7 },
+        { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6 },
+      ],
     },
     {
       name: "LANZA",
@@ -115,12 +145,15 @@ document.addEventListener("DOMContentLoaded", function () {
       rating: 63,
       position: "POR",
       stats: { PAC: 82, SHO: 80, PAS: 78, DRI: 85, DEF: 90, PHY: 80 },
-      matches: [],
+      matches: [
+        { opponent: "JPI", goals: 0, assists: 3, rating: 8 },
+        { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 7 },
+      ],
     },
   ];
 
   // Carica i dati salvati dal localStorage, se esistono
-  const savedData = localStorage.getItem("playersData");
+  /*const savedData = localStorage.getItem("playersData");
   if (savedData) {
     const parsed = JSON.parse(savedData);
     parsed.forEach((savedPlayer) => {
@@ -130,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+    */
 
   const container = document.getElementById("players-container");
 
@@ -404,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function () {
       chartBtn.click(); // Ricrea con nuovi dati
     }
     // Salva aggiornamenti nel localStorage
-    localStorage.setItem("playersData", JSON.stringify(players));
+    // localStorage.setItem("playersData", JSON.stringify(players));
 
     matchForm.reset();
   });
