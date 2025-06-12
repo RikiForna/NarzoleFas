@@ -1,0 +1,508 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    /* Background dinamico con gradiente animato */
+    background: linear-gradient(45deg, #4CAF50, #FF6347, #1E90FF); /* Colori ispirati al calcio */
+    background-size: 200% 200%; /* Necessario per l'animazione fluida */
+    animation: gradientShift 10s ease infinite;
+    
+    justify-content: flex-start; /* Non centrato, lascia la navbar in alto */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1000; /* Assicura che la navbar rimanga sopra il background */
+    position: relative; /* Necessario per il z-index */
+}
+  .pop {
+    animation: fadeInZoom 2s ease forwards;
+    font-size: 80px;
+    animation-delay: 1s; /* Ritardo di 1 secondo */
+    opacity: 0; /* Inizialmente invisibile */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Inizia ridotto */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Arriva alla dimensione originale */
+    }
+}
+
+  .header {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+.logo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 1s ease, box-shadow 1s ease; /* Aumento durata transizione */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeZoomIn 1.5s ease forwards, pulseGlow 6s infinite ease-in-out; /* Estesa la durata delle animazioni */
+    opacity: 0; /* Inizio da invisibile, si anima all'ingresso */
+    border: 4px solid transparent;
+    background-image: linear-gradient(white, white),
+                      radial-gradient(circle at top left, #00e0ff, #ff00d4);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+}
+
+.logo.clicked {
+    animation: fadeZoomIn 1.5s ease forwards, pulseGlow 6s infinite ease-in-out, bounceClick 1s ease, sparkle 1s ease; /* Aumentata durata animazione bounce e sparkle */
+}
+
+.logo:hover {
+    transform: rotateZ(2deg) scale(1.08);
+    box-shadow: 0 0 40px rgba(255, 0, 200, 0.3), 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 0, 200, 0.3), 0 0 80px rgba(0, 255, 255, 0.3);
+    }
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+    
+  
+  .players-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    flex: 1;
+  }
+/* CSS base */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .fifa-card {
+    width: 200px;
+    height: 300px;
+    background-image: url('/img/SU.png'); /* Usa il nuovo sfondo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 👉 effetto al passaggio del mouse */
+.fifa-card:hover {
+  transform: translateY(-30px);
+  
+}
+  
+  .fifa-card .info {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .player-name {
+    position: absolute;
+    bottom: 80px; /* posizionalo sopra le stats */
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 17px;
+    padding: 2px 0;
+    padding-right: 10px;
+    border-radius: 4px;
+  }
+  
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .stats div span:first-child {
+    display: block;
+    font-size: 0.8rem;
+  }
+  
+  .stats div span:last-child {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .stats-line {
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: first baseline; /* CENTRA */
+    gap: 13px;               /* Spazio uniforme tra gli elementi */
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    padding:0 15px;
+}
+
+.player-img {
+    position: absolute;
+    bottom: 110px; /* o regolalo come ti serve */
+    left: 50%;
+    transform: translateX(-48%);
+    width: auto;
+    height: 150px; /* Regola l'altezza dell'immagine */
+ object-fit: cover;
+ filter: drop-shadow(30px 15px 15px rgba(0, 0, 0, 0.5));
+
+   
+ 
+  }
+
+  
+  .player-rating {
+    position: absolute;
+    top: 70px;
+    left: 27px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 1px 2px black;
+      z-index: 1;
+  }
+  
+  .rating {
+    font-size: 26px;
+    line-height: 1;
+    
+  }
+  
+  .position {
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  
+
+#staff-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.staff-card {
+  width: 200px;
+  height: 300px;
+  background-image: url('/img/staff-bg.png'); /* Cambialo con uno sfondo diverso */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: scale(1.05);
+}
+
+.staff-card .role {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.staff-card .name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  border-radius: 6px;
+}
+
+
+
+  /* Stile per la modale */
+.modal {
+    display: none; /* Nascosta di default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Sfondo semi-trasparente */
+}
+
+/* Contenuto della modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centrare verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px; /* Larghezza della modale */
+    height: 5x  00px; /* Altezza della modale */
+    border-radius: 20px; /* Arrotonda gli angoli */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra per un effetto più morbido */
+    transform: scale(0.95); /* Leggermente più piccolo */
+    animation: modalAppear 0.3s ease-out forwards; /* Animazione di comparsa */
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#modalImage {   
+    width: 100%; /* Adatta la larghezza al contenitore */
+    max-width: 400px; /* Imposta una larghezza massima */
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 80px; /* Arrotonda gli angoli */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Aggiunge un'ombra per un effetto più morbido */
+    margin: 0 auto; /* Centra l'immagine */
+}
+
+
+.stats-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .stats-button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Pulsante di chiusura */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+
+.stats-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #1e1e2f, #3e3e60);
+  color: white;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.close-stats {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+#detailedStats li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  list-style: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+#matchTable {
+  width: 90%;
+  max-width: 700px;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+#matchTable thead {
+  background-color: #111;
+  color: #0ff;
+  font-size: 1.2rem;
+}
+
+#matchTable th, #matchTable td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+#matchTable tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#statsImage {
+  max-width: 250px;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  display: block;
+}
+
+
+#playerChart {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+
+.match-form {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.match-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+}
+
+.contribution-box {
+  max-width: 400px;
+  margin: 0 auto;
+  color: #000;
+}
+
+
+
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+    margin-top: auto; /* Spinge il footer al fondo della pagina */
+}
+  

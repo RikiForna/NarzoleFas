@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REAL NARZOLE FAS</title>
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+
+    <script src="Bootstrap/jquery.js"></script>
+    <script src="Bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" media="screen and (max-device-width:768px)" href="CSS/mobile.css">
+    <link rel="stylesheet" media="screen and (min-device-width:768px)" href="CSS/pc.css">
+    <link rel="stylesheet" href="CSS/comune.css">
+
+    <script src="JS/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+<body style="background-color: whitesmoke" >
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/Screenshot 2025-04-15 211833.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+            Real Narzole FAS
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" data-lang="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-lang="features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-lang="pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-lang="contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <header class="header">
+        <img src="img/Screenshot 2025-04-15 211833.png" alt="Logo Real Narzole FAS" class="logo" />
+        <h1 class="pop">Real Narzole FAS</h1>
+      </header>
+    
+
+    <main class="container my-5">
+        <!-- Container per tutte le card -->
+    <div id="players-container" class="card-grid"></div>
+    <div id="staff-container">
+  <!-- Qui JS inserirà le carte staff -->
+</div>
+
+
+    </main>
+<!-- Modale -->
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalName">Nome Giocatore</h2>
+      <img id="modalImage" src="" alt="Player"  />
+      <br><br>
+      <p id="modalPosition">Posizione: </p>
+      <p id="modalStats">Statistiche: </p>
+
+      <button id="viewStatsBtn" class="stats-button">Stats</button>
+    </div>
+  </div>
+
+
+  <!-- Videata dettagliata -->
+<div id="playerStatsScreen" class="stats-screen" style="display: none;">
+  <button id="backToModalBtn" class="close-stats">← Torna indietro</button>
+  <h2 id="statsName"></h2>
+  <img id="statsImage" src="" alt="Player Image" />
+  <ul id="detailedStats"></ul>
+  <h3>Prestazioni nelle partite</h3>
+
+
+
+<h3>Inserisci nuova partita</h3>
+<form id="matchForm" class="match-form">
+  <div class="form-row">
+    <input type="text" id="opponentInput" placeholder="Avversario" required>
+    <input type="date" id="dateInput" required>
+  </div>
+  <div class="form-row">
+    <input type="number" id="goalsInput" placeholder="Gol" min="0" required>
+    <input type="number" id="assistsInput" placeholder="Assist" min="0" required>
+    <input type="number" id="ratingInput" placeholder="Voto" step="0.1" min="1" max="10" required>
+  </div>
+  <button type="submit" class="stats-button">+ Aggiungi</button>
+</form>
+
+<h3>Prestazioni nelle partite</h3>
+<table id="matchTable" class="table table-bordered table-hover table-dark text-center">
+  <thead>
+    <tr>
+      <th>Avversario</th>
+      <th>Gol</th>
+      <th>Assist</th>
+      <th>Voto</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+<!-- Modal Presidente -->
+<div id="presidentModal" class="modal" style="display:none">
+  <span id="closePresidentModal" class="close">&times;</span>
+  <h2 id="presName">Presidente</h2>
+  <img id="presImage" src="" alt="" />
+  
+  <!-- Form rigori -->
+  <form id="penaltyForm">
+    <input type="text" id="penaltyMatch" placeholder="Partita" required>
+    <input type="number" id="penaltyTaken" placeholder="Rigori Tirati" required>
+    <input type="number" id="penaltyMissed" placeholder="Rigori Sbagliati" required>
+    <button type="submit">Aggiungi</button>
+  </form>
+
+  <!-- Tabella rigori -->
+  <table id="penaltyTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Partita</th>
+        <th>Tirati</th>
+        <th>Sbagliati</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button id="penaltyChartBtn" class="stats-button">Mostra Rendimento</button>
+  <canvas id="penaltyChart" width="600" height="300" style="display:none;"></canvas>
+
+  <div id="penaltySummary" style="display:none;"></div>
+</div>
+
+
+
+<button id="toggleChartBtn" class="stats-button">Mostra Andamento Voti</button>
+<canvas id="playerChart" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
+<button id="statsChartBtn" class="stats-button">Mostra Gol & Assist per Partita</button>
+<canvas id="statsChartCanvas" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
+<div id="playerSelector" class="player-selector" style="margin-top: 20px;">
+
+</div>
+
+<button id="radarChartBtn" class="stats-button">Confronta con altri</button>
+<canvas id="radarChartCanvas" width="400" height="400" style="display: none; margin-top: 20px;"></canvas>
+<div id="contributionResult" class="contribution-box" style="display:none; margin-top: 20px;"></div>
+
+
+
+</div>
+
+  
+
+
+
+    <footer class="footer">
+    © <span id="year"></span> Real Narzole FAS. Tutti i diritti riservati.
+    
+  </footer>
+
+</body>
+</html>
