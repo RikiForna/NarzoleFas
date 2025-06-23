@@ -110,7 +110,15 @@ body {
     }
 }
 
-    
+
+    .card-of-the-week .player-name {
+  color: white;
+}
+
+.card-of-the-week .stats-line {
+  color: white;
+}
+
   
   .players-container {
     display: grid;
@@ -128,12 +136,13 @@ body {
   }
   
   .fifa-card {
+    position: relative;
     width: 200px;
     height: 300px;
     background-image: url('/img/SU.png'); /* Usa il nuovo sfondo */
     background-size: cover;
     background-position: center;
-    position: relative;
+    
     color: #000;
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -217,6 +226,22 @@ body {
    
  
   }
+
+ .injury-icon-right {
+  position: absolute;
+  right: 20px; /* fuori dalla card */
+  top: 30%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 40%;
+  font-weight: bold;
+  z-index: 5;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
 
   
   .player-rating {

@@ -74,99 +74,56 @@
       <p id="modalStats">Statistiche: </p>
 
       <button id="viewStatsBtn" class="stats-button">Stats</button>
+
     </div>
   </div>
 
-
-  <!-- Videata dettagliata -->
+<!-- ✅ Schermata Stats COMPLETA -->
 <div id="playerStatsScreen" class="stats-screen" style="display: none;">
   <button id="backToModalBtn" class="close-stats">← Torna indietro</button>
   <h2 id="statsName"></h2>
   <img id="statsImage" src="" alt="Player Image" />
   <ul id="detailedStats"></ul>
+
   <h3>Prestazioni nelle partite</h3>
-
-
-
-<h3>Inserisci nuova partita</h3>
-<form id="matchForm" class="match-form">
-  <div class="form-row">
-    <input type="text" id="opponentInput" placeholder="Avversario" required>
-    <input type="date" id="dateInput" required>
-  </div>
-  <div class="form-row">
-    <input type="number" id="goalsInput" placeholder="Gol" min="0" required>
-    <input type="number" id="assistsInput" placeholder="Assist" min="0" required>
-    <input type="number" id="ratingInput" placeholder="Voto" step="0.1" min="1" max="10" required>
-  </div>
-  <button type="submit" class="stats-button">+ Aggiungi</button>
-</form>
-
-<h3>Prestazioni nelle partite</h3>
-<table id="matchTable" class="table table-bordered table-hover table-dark text-center">
-  <thead>
-    <tr>
-      <th>Avversario</th>
-      <th>Gol</th>
-      <th>Assist</th>
-      <th>Voto</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-
-<!-- Modal Presidente -->
-<div id="presidentModal" class="modal" style="display:none">
-  <span id="closePresidentModal" class="close">&times;</span>
-  <h2 id="presName">Presidente</h2>
-  <img id="presImage" src="" alt="" />
-  
-  <!-- Form rigori -->
-  <form id="penaltyForm">
-    <input type="text" id="penaltyMatch" placeholder="Partita" required>
-    <input type="number" id="penaltyTaken" placeholder="Rigori Tirati" required>
-    <input type="number" id="penaltyMissed" placeholder="Rigori Sbagliati" required>
-    <button type="submit">Aggiungi</button>
-  </form>
-
-  <!-- Tabella rigori -->
-  <table id="penaltyTable" class="table table-striped">
+  <table id="matchTable" class="table table-bordered table-hover table-dark text-center">
     <thead>
       <tr>
-        <th>Partita</th>
-        <th>Tirati</th>
-        <th>Sbagliati</th>
+        <th>Avversario</th>
+        <th>Gol</th>
+        <th>Assist</th>
+        <th>Voto</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
-  <button id="penaltyChartBtn" class="stats-button">Mostra Rendimento</button>
-  <canvas id="penaltyChart" width="600" height="300" style="display:none;"></canvas>
+  <h3>Inserisci nuova partita</h3>
+  <form id="matchForm" class="match-form">
+    <div class="form-row">
+      <input type="text" id="opponentInput" placeholder="Avversario" required>
+      <input type="date" id="dateInput" required>
+    </div>
+    <div class="form-row">
+      <input type="number" id="goalsInput" placeholder="Gol" min="0" required>
+      <input type="number" id="assistsInput" placeholder="Assist" min="0" required>
+      <input type="number" id="ratingInput" placeholder="Voto" step="0.1" min="1" max="10" required>
+    </div>
+    <button type="submit" class="stats-button">+ Aggiungi</button>
+  </form>
 
-  <div id="penaltySummary" style="display:none;"></div>
+  <button id="toggleChartBtn" class="stats-button">Mostra Andamento Voti</button>
+  <canvas id="playerChart" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
+
+  <button id="statsChartBtn" class="stats-button">Mostra Gol & Assist per Partita</button>
+  <canvas id="statsChartCanvas" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
+
+  <button id="radarChartBtn" class="stats-button">Confronta con altri</button>
+  <canvas id="radarChartCanvas" width="400" height="400" style="display: none; margin-top: 20px;"></canvas>
+  <div id="contributionResult" class="contribution-box" style="display:none; margin-top: 20px;"></div>
 </div>
 
 
-
-<button id="toggleChartBtn" class="stats-button">Mostra Andamento Voti</button>
-<canvas id="playerChart" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
-<button id="statsChartBtn" class="stats-button">Mostra Gol & Assist per Partita</button>
-<canvas id="statsChartCanvas" width="600" height="300" style="display: none; margin-top: 20px;"></canvas>
-<div id="playerSelector" class="player-selector" style="margin-top: 20px;">
-
-</div>
-
-<button id="radarChartBtn" class="stats-button">Confronta con altri</button>
-<canvas id="radarChartCanvas" width="400" height="400" style="display: none; margin-top: 20px;"></canvas>
-<div id="contributionResult" class="contribution-box" style="display:none; margin-top: 20px;"></div>
-
-
-
-</div>
-
-  
 
 
 

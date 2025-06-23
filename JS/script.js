@@ -32,31 +32,34 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       name: "PANERO",
       image: "img/pane.png",
-      rating: 64,
+      rating: 74,
       position: "ATT",
-      stats: { PAC: 90, SHO: 70, PAS: 65, DRI: 71, DEF: 46, PHY: 68 },
+      stats: { PAC: 90, SHO: 77, PAS: 68, DRI: 71, DEF: 46, PHY: 70 },
       matches: [
         { opponent: "JPI", goals: 3, assists: 0, rating: 8.5 },
         { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6.5 },
+        { opponent: "Zanterlions", goals: 1, assists: 0, rating: 7.0 },
       ],
     },
     {
       name: "PEPE",
       image: "img/Screenshot_2025-06-07_161706-removebg-preview.png",
-      rating: 63,
+      rating: 84,
       position: "CMD",
-      stats: { PAC: 94, SHO: 66, PAS: 66, DRI: 70, DEF: 62, PHY: 57 },
+      stats: { PAC: 94, SHO: 78, PAS: 75, DRI: 70, DEF: 70, PHY: 67 },
       matches: [
         { opponent: "JPI", goals: 4, assists: 0, rating: 9 },
         { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 8 },
+        { opponent: "Zanterlions", goals: 4, assists: 0, rating: 8.5 },
       ],
     },
     {
       name: "CURTI",
       image: "img/curti.png",
-      rating: 64,
+      rating: 85,
       position: "LW",
-      stats: { PAC: 87, SHO: 72, PAS: 70, DRI: 88, DEF: 45, PHY: 70 },
+      stats: { PAC: 93, SHO: 82, PAS: 80, DRI: 88, DEF: 45, PHY: 75 },
+      injured: true,
       matches: [
         { opponent: "JPI", goals: 3, assists: 5, rating: 9.5 },
         { opponent: "Rocca Boys", goals: 1, assists: 2, rating: 9 },
@@ -65,12 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       name: "COLOMBANO",
       image: "img/cholo.png",
-      rating: 61,
+      rating: 84,
       position: "CM",
-      stats: { PAC: 82, SHO: 80, PAS: 78, DRI: 70, DEF: 80, PHY: 80 },
+      stats: { PAC: 82, SHO: 80, PAS: 88, DRI: 70, DEF: 80, PHY: 75 },
       matches: [
         { opponent: "JPI", goals: 2, assists: 1, rating: 8 },
         { opponent: "Rocca Boys", goals: 3, assists: 1, rating: 9 },
+        { opponent: "Zanterlions", goals: 1, assists: 1, rating: 7.5 },
       ],
     },
     {
@@ -78,92 +82,86 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "img/rajan.png",
       rating: 59,
       position: "ATT",
-      stats: { PAC: 65, SHO: 60, PAS: 63, DRI: 63, DEF: 40, PHY: 56 },
+      stats: { PAC: 65, SHO: 60, PAS: 60, DRI: 63, DEF: 40, PHY: 56 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 1, rating: 6.5 },
         { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6.5 },
+        { opponent: "Zanterlions", goals: 0, assists: 0, rating: 6.5 },
       ],
     },
     {
       name: "COGNO",
       image: "img/nico.png",
-      rating: 56,
+      rating: 67,
       position: "ATT",
-      stats: { PAC: 45, SHO: 75, PAS: 43, DRI: 58, DEF: 30, PHY: 63 },
+      stats: { PAC: 53, SHO: 75, PAS: 58, DRI: 58, DEF: 30, PHY: 67 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 0, rating: 6.5 },
         { opponent: "Rocca Boys", goals: 1, assists: 0, rating: 7 },
+        { opponent: "Zanterlions", goals: 1, assists: 0, rating: 7 },
       ],
     },
     {
       name: "VECCHIO",
       image: "img/vecchio.png",
-      rating: 60,
+      rating: 68,
       position: "ATT",
-      stats: { PAC: 65, SHO: 66, PAS: 68, DRI: 65, DEF: 52, PHY: 80 },
+      stats: { PAC: 65, SHO: 68, PAS: 68, DRI: 65, DEF: 42, PHY: 80 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 0, rating: 4.5 },
         { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 9.5 },
+        { opponent: "Zanterlions", goals: 0, assists: 0, rating: 6.0 },
       ],
     },
     {
       name: "VACCHETTA",
       image: "img/vacche.png",
-      rating: 63,
+      rating: 64,
       position: "DC",
       stats: { PAC: 70, SHO: 58, PAS: 67, DRI: 68, DEF: 72, PHY: 74 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 0, rating: 7.5 },
         { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 7 },
+        { opponent: "Zanterlions", goals: 1, assists: 0, rating: 6.5 },
       ],
     },
     {
       name: "OLOCCO",
       image: "img/gabbo.png",
-      rating: 57,
+      rating: 70,
       position: "DC",
-      stats: { PAC: 58, SHO: 56, PAS: 43, DRI: 50, DEF: 70, PHY: 88 },
+      stats: { PAC: 58, SHO: 62, PAS: 65, DRI: 56, DEF: 70, PHY: 88 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 0, rating: 6.5 },
         { opponent: "Rocca Boys", goals: 2, assists: 0, rating: 7 },
+        { opponent: "Zanterlions", goals: 0, assists: 1, rating: 7.5 },
       ],
     },
     {
       name: "MEGERA",
       image: "img/meggy.png",
-      rating: 56,
+      rating: 59,
       position: "DC",
       stats: { PAC: 65, SHO: 60, PAS: 55, DRI: 57, DEF: 63, PHY: 58 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 0, rating: 7 },
         { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 6 },
+        { opponent: "Zanterlions", goals: 0, assists: 0, rating: 6.5 },
       ],
     },
     {
       name: "LANZA",
       image: "img/Screenshot_2025-06-07_161443-removebg-preview.png",
-      rating: 63,
+      rating: 74,
       position: "POR",
-      stats: { DIV: 82, HAN: 80, KIC: 78, REF: 85, SPD: 90, POS: 80 },
+      stats: { DIV: 84, HAN: 80, KIC: 78, REF: 85, SPD: 90, POS: 80 },
       matches: [
         { opponent: "JPI", goals: 0, assists: 3, rating: 8 },
         { opponent: "Rocca Boys", goals: 0, assists: 0, rating: 7 },
+        { opponent: "Zanterlions", goals: 0, assists: 0, rating: 6.5 },
       ],
     },
   ];
-
-  // Carica i dati salvati dal localStorage, se esistono
-  /*const savedData = localStorage.getItem("playersData");
-  if (savedData) {
-    const parsed = JSON.parse(savedData);
-    parsed.forEach((savedPlayer) => {
-      const player = players.find((p) => p.name === savedPlayer.name);
-      if (player) {
-        player.matches = savedPlayer.matches;
-      }
-    });
-  }
-    */
 
   const container = document.getElementById("players-container");
 
@@ -205,66 +203,116 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /*
+  // 🔄 Recupera dati dal localStorage una volta sola
+  const savedData = localStorage.getItem("playersData");
+  if (savedData) {
+    const parsed = JSON.parse(savedData);
+    parsed.forEach((savedPlayer) => {
+      const found = players.find((p) => p.name === savedPlayer.name);
+      if (found) {
+        found.matches = savedPlayer.matches;
+      }
+    });
+  }
+*/
+  // 1. Calcolo delle statistiche e assegnazione dello sfondo iniziale
   players.forEach((player) => {
-    const savedData = localStorage.getItem("playersData");
-    if (savedData) {
-      const parsed = JSON.parse(savedData);
-      parsed.forEach((savedPlayer) => {
-        const found = players.find((p) => p.name === savedPlayer.name);
-        if (found) {
-          found.matches = savedPlayer.matches;
-        }
-      });
+    const totalGoals = player.matches.reduce((sum, m) => sum + m.goals, 0);
+    const totalAssists = player.matches.reduce((sum, m) => sum + m.assists, 0);
+    const highestGoals = Math.max(...player.matches.map((m) => m.goals), 0);
+    const avgRating = player.matches.length
+      ? Math.round(
+          (player.matches.reduce((sum, m) => sum + m.rating, 0) /
+            player.matches.length) *
+            10
+        ) / 10
+      : 0;
+
+    player.avgRating = avgRating;
+
+    let cardBackground = "SU.png";
+    if (highestGoals >= 4) {
+      cardBackground = "hero.png";
+    } else if (avgRating >= 8.5 || avgRating >= 8.0) {
+      cardBackground = "motm.png";
+    } else if (totalGoals >= 3 && totalAssists >= 3) {
+      cardBackground = "oro.png";
+    } else if (totalGoals > 2 && totalAssists >= 1) {
+      cardBackground = "NoOro.png";
+    } else if (totalGoals >= 2 || totalAssists >= 2) {
+      cardBackground = "arg.png";
     }
+
+    player.cardBackground = cardBackground;
+  });
+
+  // 2. Trova il giocatore con la media voto più alta
+  const topPlayer = players.reduce(
+    (best, p) => ((p.avgRating || 0) > (best.avgRating || 0) ? p : best),
+    { avgRating: 0 }
+  );
+
+  if (topPlayer) {
+    topPlayer.cardBackground = "week.png";
+  }
+
+  const savedStats = JSON.parse(localStorage.getItem("previousStats") || "{}");
+
+  // 3. Crea le card con il giusto sfondo
+  players.forEach((player) => {
     let statsLine = "";
     if (player.name === "LANZA") {
-      // Stats specifiche per portiere
       statsLine = `
-  <span>${player.stats.DIV}</span>
-  <span>${player.stats.HAN}</span>
-  <span>${player.stats.KIC}</span>
-  <span>${player.stats.REF}</span>
-  <span>${player.stats.SPD}</span>
-  <span>${player.stats.POS}</span>
-  `;
+      <span>${player.stats.DIV}</span>
+      <span>${player.stats.HAN}</span>
+      <span>${player.stats.KIC}</span>
+      <span>${player.stats.REF}</span>
+      <span>${player.stats.SPD}</span>
+      <span>${player.stats.POS}</span>
+    `;
     } else {
       statsLine = `
-  <span>${player.stats.PAC}</span>
-  <span>${player.stats.SHO}</span>
-  <span>${player.stats.PAS}</span>
-  <span>${player.stats.DRI}</span>
-  <span>${player.stats.DEF}</span>
-  <span>${player.stats.PHY}</span>
-  `;
+      <span>${player.stats.PAC}</span>
+      <span>${player.stats.SHO}</span>
+      <span>${player.stats.PAS}</span>
+      <span>${player.stats.DRI}</span>
+      <span>${player.stats.DEF}</span>
+      <span>${player.stats.PHY}</span>
+    `;
     }
 
     const card = document.createElement("div");
     card.className = "fifa-card";
+    card.style.backgroundImage = `url('img/${player.cardBackground}')`;
+
+    if (player.cardBackground === "week.png") {
+      card.classList.add("card-of-the-week");
+    }
     card.innerHTML = `
-      <div class="overlay">
-      <div class="player-rating">
-        <div class="rating">${player.rating}</div>
-        <div class="position">${player.position}</div>
-      </div>
-      <img src="${player.image}" alt="${player.name}" class="player-img" />
-      <div class="player-name">${player.name}</div>
-      <div class="stats-line">
-        ${statsLine}
-      </div>
-      </div>
-    `;
+  <div class="overlay">
+    <div class="player-rating">
+      <div class="rating">${player.rating}</div>
+      <div class="position">${player.position}</div>
+    </div>
+    <img src="${player.image}" alt="${player.name}" class="player-img" />
+    <div class="player-name">${player.name}</div>
+    <div class="stats-line">
+      ${statsLine}
+    </div>
+  </div>
+  ${player.name === "CURTI" ? '<div class="injury-icon-right">+</div>' : ""}
+`;
 
     card.addEventListener("click", () => {
       selectedPlayer = player;
-      // 🔁 Nasconde eventuali grafici lasciati aperti
+
       document.getElementById("playerChart").style.display = "none";
       document.getElementById("toggleChartBtn").textContent =
         "Mostra Andamento Voti";
-
       document.getElementById("radarChartCanvas").style.display = "none";
       document.getElementById("radarChartBtn").textContent =
         "Confronta con altri";
-
       const contributionBox = document.getElementById("contributionResult");
       if (contributionBox) contributionBox.style.display = "none";
 
@@ -272,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(
         "modalPosition"
       ).textContent = `Posizione: ${player.position}`;
+
       if (player.name === "LANZA") {
         document.getElementById("modalStats").textContent =
           `Statistiche: DIV ${player.stats.DIV}, HAN ${player.stats.HAN}, KIC ${player.stats.KIC}, ` +
@@ -285,6 +334,10 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("modalImage").src = player.image;
       document.getElementById("modalImage").alt = player.name;
       modal.style.display = "block";
+      const injuryIcon = document.querySelector(".injury-icon-right");
+      if (injuryIcon) injuryIcon.style.display = "none";
+
+      // Collega il pulsante "Storico"
     });
 
     container.appendChild(card);
@@ -293,12 +346,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Chiusura modale con la X
   span.onclick = function () {
     modal.style.display = "none";
+    const injuryIcon = document.querySelector(".injury-icon-right");
+    if (injuryIcon) injuryIcon.style.display = "block";
   };
 
   // Click fuori dalla modale
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+      const injuryIcon = document.querySelector(".injury-icon-right");
+      if (injuryIcon) injuryIcon.style.display = "block";
     }
   };
 
@@ -439,6 +496,14 @@ document.addEventListener("DOMContentLoaded", function () {
     statsScreen.style.display = "none";
     modal.style.display = "block";
   };
+
+  /*
+  backToStatsBtn.onclick = function () {
+    historyScreen.style.display = "none";
+    statsScreen.style.display = "block";
+  };
+  */
+
   const matchForm = document.getElementById("matchForm");
 
   matchForm.addEventListener("submit", function (e) {
@@ -453,6 +518,18 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     selectedPlayer.matches.push(newMatch);
+    if (!selectedPlayer.history) selectedPlayer.history = [];
+
+    const snapshot = {
+      date: newMatch.date,
+      stats: { ...selectedPlayer.stats }, // copia attuale delle stat
+      rating: selectedPlayer.rating,
+      image: selectedPlayer.image,
+      position: selectedPlayer.position,
+    };
+
+    selectedPlayer.history.push(snapshot);
+
     renderMatchTable();
 
     // Se il grafico è visibile, aggiornalo
@@ -461,7 +538,7 @@ document.addEventListener("DOMContentLoaded", function () {
       chartBtn.click(); // Ricrea con nuovi dati
     }
     // Salva aggiornamenti nel localStorage
-    // localStorage.setItem("playersData", JSON.stringify(players));
+    localStorage.setItem("playersData", JSON.stringify(players));
 
     matchForm.reset();
   });
@@ -600,7 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     radarChartInstance = new Chart(radarChartCanvas, {
-      type: "line",
+      type: "radar",
       data: {
         labels: labels,
         datasets: datasets,
